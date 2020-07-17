@@ -1,6 +1,6 @@
 :root {
-    --main-bg-color: #FFFFFF;
-    --headline-color: #FFEFE5;
+    --main-bg-color: #1d1a3e;
+    --headline-color: #040028;
     --txt-color: #FFFFFF;
     --sec-txt-color: #1FC8A9;
 }
@@ -10,25 +10,76 @@
 }
 body {
     margin: 0px;
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
 }
 nav {
     background-color: var(--headline-color);
-    width: 15%;
     height: 100vh;
     display: inline-block;
     margin: 0px;
-    padding: 20px;
+    padding: 1vw;
     font-family: josefina;
     font-style: bold;
-    font-size: 40px;
     color: var(--sec-txt-color);
-    text-align: center;
+    box-shadow: 0px 0px 6px 3px black;
 }
 
-#main-content {
+h1 {
+    /* font-size: 3em; */
+    font-size: 2.7vw;
+    text-align: center;
+    margin-top: 1em;
+}
+
+/* #main-content {
     background-color: var(--main-bg-color);
     display: inline-block;
     color: var(--sec-txt-color);
     padding: 20px;
+} */
+
+#titleCard {
+    position: relative;
+    width: 100%;
+    color: var(--txt-color);
+}
+#titleCard svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    fill: #E39EC1;
+}
+#titleCard h1 {
+    text-shadow:  2px 2px 2px var(--headline-color);
+    position: relative;
+    padding-top: .8em;
+    padding-bottom: .8em;
+}
+
+#realBody {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 2;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 18.193vw auto 18.193vw;
+}
+
+#center {
+    width: 1000px;
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    margin: auto;
+}
+#right, #left {
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    z-index: 3;
 }
