@@ -1,13 +1,17 @@
 window.onload = function() {
-    this.document.getElementById("")
+    this.document.getElementById("sidepanel-toggle").onclick = () => {
+        this.toggleSideBar(0);
+        this.toggleSideBar(1);
+        document.getElementById("sidepanel-toggle").firstChild.classList.toggle('starClick');
+    }
 }
 
-function openSideBar(side) {
-    let panelId = ["right", "left"][side];
-    document.getElementById(panelId).style.width = "18.193vw";
-}
 
-function closeSideBar(side) {
-    let panelId = ["right", "left"][side];
-    document.getElementById(panelId).style.width = "0px";
+function toggleSideBar(side) {
+    if (side) {
+        document.getElementById("lPanel").classList.toggle('lClose');
+    } else {
+        document.getElementById("rpanel").classList.toggle('isClosed');
+        document.getElementById("sidepanel-toggle").classList.toggle('isClosed');
+    }
 }

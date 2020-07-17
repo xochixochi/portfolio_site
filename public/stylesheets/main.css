@@ -3,6 +3,7 @@
     --headline-color: #040028;
     --txt-color: #FFFFFF;
     --sec-txt-color: #1FC8A9;
+    --sidepanel-width: 18.193vw;
 }
 @font-face {
     font-family: josefina;
@@ -69,7 +70,7 @@ h1 {
     z-index: 2;
     background-color: transparent;
     display: grid;
-    grid-template-columns: 18.193vw auto 18.193vw;
+    grid-template-columns: var(--sidepanel-width) auto var(--sidepanel-width);
 }
 
 #center {
@@ -77,9 +78,47 @@ h1 {
     height: 100vh;
     background-color: var(--main-bg-color);
     margin: auto;
+    z-index: 2;
+    position: relative;
 }
 #right, #left {
     height: 100vh;
-    background-color: var(--main-bg-color);
+    background-color: transparent;
     z-index: 3;
+    overflow: hidden;
+}
+
+#rpanel, #lPanel {
+    
+    width: var(--sidepanel-width);
+    height: 100%;
+    transition: .7s;
+    background-color: var(--main-bg-color);
+}
+
+#sidepanel-toggle {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    fill: #E39EC1;
+    margin-left: var(--sidepanel-width);
+    background-color: var(--headline-color);
+    border: none;
+    transition: .7s;
+}
+
+#sidepanel-toggle svg{
+    transition: transform .7s ease-in-out;
+}
+
+
+.isClosed {
+    transform: translateZ(0) translateX(calc(-1 * var(--sidepanel-width)));
+}
+.lClose {
+    transform: translateZ(0) translateX(var(--sidepanel-width));
+}
+.starClick {
+    transform: rotate(720deg);
 }
